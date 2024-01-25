@@ -1,6 +1,6 @@
 # HVACMonitoring
 ## Know what you're doing
-This project involves connected to the low-voltage AC portion of your furnace. While this is fairly straight forward, hire someone competent if you don't know what your doing.
+This project involves connections to the low-voltage AC portion of your furnace. While this is fairly straight forward, hire someone competent if you don't know what your doing.
 
 ## Background
 This is an update/upgrade to my original HVAC monitoring project located here: https://github.com/tanky321/HVAC_Monitor
@@ -30,6 +30,20 @@ Three opto-isolated inputs are provided to read the status of the three possible
 ![alt text](https://i.imgur.com/vmi3Lcr.png)
 
 ### Temperature Measurement
-Temperature measurement is accomplished by three MAX6675ISA+T ICs. These ICs can only measure K-Type thermocouples (which are the most common). I have typically used the three channels to measure input (return air), output (supply air) and ambient temperature. Measuring the differential temperature across the furnace + AC coil, provides a good indication of how well the furnace and AC system are working. Ambient temperature isnt really critical, just a nice data point.
+Temperature measurement is accomplished by three MAX6675ISA+T ICs. These ICs can only measure K-Type thermocouples (which are the most common). These sensors operate using SPI. I have typically used the three channels to measure input (return air), output (supply air) and ambient temperature. Measuring the differential temperature across the furnace + AC coil, provides a good indication of how well the furnace and AC system are working. Ambient temperature isnt really critical, just a nice data point.
 ![alt text](https://i.imgur.com/eu5xeX9.png)
 
+### Pressure Measurement
+A Sensiron SDP810-500PA sensor is used for measurement of differential pressure. This sensor uses I2C to communicate. It is capable of measuring ±2.0 inH2O (±500pA) which should be more than adequate for just about all HVAC installations. I have used magnetic static pressure probes for mechanical interface to the system. [Amazon link here](https://www.amazon.com/Dwyer-Portable-Static-Plastic-Insertion/dp/B008HOWU6I/ref=sr_1_5?crid=2RSDY7RSZ3YQS&keywords=static%2Bpressure%2Bprobe&qid=1706146716&sprefix=static%2Bpressure%2Bprobe%2B%2Caps%2C130&sr=8-5&th=1)
+![alt text](https://i.imgur.com/cBenJD0.png)
+
+### Water Detection
+Two simple water detection circuits are included for detection of leaks or drain overflow. For use, connect two wires to a channels connector (J5 or J6) and place them near each other (but not touching). If water completes the circuits between the two wires, the output to the ESP32 will drive LOW, indicating a water leak detected.
+![alt text](https://i.imgur.com/kMcRsEr.png)
+
+## Control
+Main system control/interface is done with an ESP32-C3 module. A Status LED is included and connected to GPIO3.
+
+USB connectivity is provided for upload of firmware.
+
+![alt text](https://i.imgur.com/T55x2s4.png)
