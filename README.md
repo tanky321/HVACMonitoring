@@ -22,5 +22,14 @@ Pinout for the connector is as follows:
    
 These connections are labeled on the PCB.
 
-The input AC is fused, recitfied and fed into a 3.3V stepdown converter.
+The input AC is fused, rectified and fed into a 3.3V stepdown converter. A TVS diode is also included for input protection.
 ![alt text](https://i.imgur.com/zW67Loc.png)
+
+### Furnace State Sensors
+Three opto-isolated inputs are provided to read the status of the three possible furnace states, Heat, Cool and Fan. Note that these signals are outputs from your thermostat, and inputs to your furnace. Reading of these signals is accomplished by the use of three FOD814AS optocouplers. These optocouplers contain two LEDs connected in anti-parallel, which is useful for the AC signals we're dealing with here. The transistor (emitter) output is connected to GND and the collector is connected to the ESP32 module via a pullup. Since we're dealing with an AC source, the output of the optocoupler will have brief periods where it turns off during the zero crossing portion of the AC waveform. A 10uF capacitor is used at the collector in order to smooth the ripple of the zero-crossing shutoff.
+![alt text](https://i.imgur.com/vmi3Lcr.png)
+
+### Temperature Measurement
+Temperature measurement is accomplished by three MAX6675ISA+T ICs. These ICs can only measure K-Type thermocouples (which are the most common). I have typically used the three channels to measure input (return air), output (supply air) and ambient temperature. Measuring the differential temperature across the furnace + AC coil, provides a good indication of how well the furnace and AC system are working. Ambient temperature isnt really critical, just a nice data point.
+![alt text](https://i.imgur.com/eu5xeX9.png)
+
