@@ -1,7 +1,7 @@
 #Edit this for your setup
 substitutions:
     name: "system-name"
-    friendly_name: "System Name"
+    disp_name: "System Name"
     update_time: 5s
     temperature1_name: "temp1Name"
     temperature2_name: "temp2Name"
@@ -10,7 +10,7 @@ substitutions:
 
 esphome:
   name: "${name}"
-  friendly_name: "${friendly_name}
+  friendly_name: "${disp_name}
   
 #Platform Setup
 esp32:
