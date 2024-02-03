@@ -1,0 +1,133 @@
+#Edit this for your setup
+substitutions:
+    name: "system-name"
+    friendly_name: "System Name"
+    update_time: 5s
+    temperature1_name: "temp1Name"
+    temperature2_name: "temp2Name"
+    temperature3_name: "temp3Name"
+    
+
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}
+  
+#Platform Setup
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino #esp-idf
+    version: recommended
+
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+#OTA Password
+ota:
+
+#Dashboard Import
+dashboard_import:
+    package_import_url: 
+    import_full_config: false
+    
+wifi:
+  # Set up a wifi access point
+  ap:
+    password: "12345678"
+
+
+# In combination with the `ap` this allows the user
+# to provision wifi credentials to the device.
+captive_portal:
+
+#Setup simple web server to see device parameters
+web_server:
+  port: 80
+
+    
+#Enable SPI on GPIO18 & 19. Note that MOSI isnt needed as the max6675 just clocks out data
+spi:
+  clk_pin: 18
+  miso_pin: 19
+  interface: hardware
+  
+#Setup I2C for the pressure sensor on GPIO4 & 5
+i2c:
+  - id: bus_a
+    sda: 4
+    scl: 5
+    scan: True
+
+sensor:
+#Monitor the wifi signal strength
+  - platform: wifi_signal
+    name: ${disp_name} WiFi
+    update_interval: 60s
+
+#Setup temperature sensors
+  - platform: max6675
+    name: ${temperature1_name}
+    cs_pin: 9
+    update_interval: ${update_time}
+  - platform: max6675
+    name: ${temperature1_name}
+    cs_pin: 8
+    update_interval: ${update_time}
+  - platform: max6675
+    name: ${temperature1_name}
+    cs_pin: 0
+    update_interval: ${update_time}
+
+#Setup pressure sensor
+  - platform: sdp3x
+    name: "Pressure"
+    i2c_id: bus_a
+    address: 0x25
+    update_interval: ${update_time}
+    unit_of_measurement: inH2O
+    filters:
+      - multiply: 0.4014630 
+
+binary_sensor:
+#Setup inputs for heat/cool/fan.
+  - platform: gpio
+    pin:
+      number: 2
+      inverted: True    #Inverted due to pcb circuit logic
+      mode: INPUT
+    name: "Heating"
+  - platform: gpio
+    pin:
+      number: 1
+      inverted: True
+      mode: INPUT
+    name: "Cooling"
+  - platform: gpio
+    pin:
+      number: 10
+      inverted: True
+      mode: INPUT
+    name: "Fan"
+ 
+ #Setup inputs for water detection
+  - platform: gpio
+    pin:
+      number: 6
+      inverted: True
+      mode: INPUT_PULLUP
+    name: "H2O Detect #1"
+  - platform: gpio
+    pin:
+      number: 7
+      inverted: True
+      mode: INPUT_PULLUP
+    name: "H2O Detect #2"
+
+#Status indicator
+status_led:
+  pin:
+    number: 3
