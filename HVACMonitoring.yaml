@@ -1,7 +1,7 @@
 #Edit this for your setup
 substitutions:
-    name: "system-name"
-    disp_name: "System Name"
+    name: "hvac-monitor"
+    disp_name: "HVAC Monitoring System"
     update_time: 5s
     temperature1_name: "temp1Name"
     temperature2_name: "temp2Name"
