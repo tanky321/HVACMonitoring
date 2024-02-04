@@ -39,7 +39,7 @@ ota:
 
 #Dashboard Import
 dashboard_import:
-    package_import_url: github://tanky321/HVACMonitoring/blob/main/HVACMonitoring.yaml@main
+    package_import_url: github://tanky321/HVACMonitoring/HVACMonitoring.yaml@main
     import_full_config: false
     
 wifi:
