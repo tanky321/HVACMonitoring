@@ -14,7 +14,7 @@ esphome:
   friendly_name: "${disp_name}"
   # Automatically add the mac address to the name
   # so you can use a single firmware for all devices
-  name_add_mac_suffix: true
+  name_add_mac_suffix: false
   project:
     name: "tanky321.hvac_monitoring_system"
     version: "1.0.0"
@@ -33,6 +33,7 @@ logger:
 # Enable Home Assistant API
 api:
 
+
 #OTA Password
 ota:
 
@@ -43,8 +44,14 @@ dashboard_import:
     
 wifi:
   # Set up a wifi access point
-  ap:
-    password: "12345678"
+  #ap:
+  #  password: "12345678"
+
+
+# Sets up Bluetooth LE (Only on ESP32) to allow the user
+# to provision wifi credentials to the device.
+esp32_improv:
+  authorizer: none
 
 
 # In combination with the `ap` this allows the user
@@ -81,11 +88,11 @@ sensor:
     cs_pin: 9
     update_interval: ${update_time}
   - platform: max6675
-    name: ${temperature1_name}
+    name: ${temperature2_name}
     cs_pin: 8
     update_interval: ${update_time}
   - platform: max6675
-    name: ${temperature1_name}
+    name: ${temperature3_name}
     cs_pin: 0
     update_interval: ${update_time}
 
