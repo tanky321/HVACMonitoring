@@ -3,10 +3,6 @@ substitutions:
     name: "hvac-monitor"
     disp_name: "HVAC Monitoring System"
     update_time: 5s
-    temperature1_name: "temp1Name"
-    temperature2_name: "temp2Name"
-    temperature3_name: "temp3Name"
-    
 
 esphome:
   name: "${name}"
@@ -84,15 +80,15 @@ sensor:
 
 #Setup temperature sensors
   - platform: max6675
-    name: ${temperature1_name}
+    name: "Temperature_1"
     cs_pin: 9
     update_interval: ${update_time}
   - platform: max6675
-    name: ${temperature2_name}
+    name: "Temperature_2"
     cs_pin: 8
     update_interval: ${update_time}
   - platform: max6675
-    name: ${temperature3_name}
+    name: "Temperature_3"
     cs_pin: 0
     update_interval: ${update_time}
 
