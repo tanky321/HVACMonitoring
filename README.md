@@ -4,7 +4,7 @@ This project involves connections to the low-voltage AC portion of your furnace.
 
 ## Background
 This is an update/upgrade to my original HVAC monitoring project located here: https://github.com/tanky321/HVAC_Monitor
-While that project was succesful, it had a couple of drawbacks I wanted to resolve.
+While that project was successful, it had a couple of drawbacks I wanted to resolve.
 * Power derived from furnace. The original design was powered through the regulator on the Adafruit Huzzah32 via an external USB connection.
 * The H20 detection circuit was not functional in its existing state.
 * Adafruit Huzzah32 is a bit pricey. With the ability to have boards made by JLC, it made sense to go with an ESP32 Module
@@ -17,7 +17,7 @@ While that project was succesful, it had a couple of drawbacks I wanted to resol
 ### ESPHome
 Each assembled board is pre-flashed with the firmware in this repository when shipped. You'll need to configure the WiFi and get it hooked into Home Assistant. Setup is simple!
 
-Once the board is powered up, head over to [Improv-Wifi](https://www.improv-wifi.com/). Using a PC or laptop that has BLE capability.
+Once the board is powered up, head over to [Improv-Wifi](https://www.improv-wifi.com/). Using a device that has BLE capability.
 
 Click on "Connect Device to WiFi"
 
@@ -55,11 +55,11 @@ Once the upload is complete, head over to HomeAssistant (Settings -> Devices & S
 ### Power
 System power is derived from the AC connections to the furnace. These connections are made via the 5 position TE header on the board.
 Pinout for the connector is as follows:
-1. 24VAC    (Typicaly labeled R)
-2. COMMON   (Typicaly labeled C)
-3. HEAT     (Typicaly labeled W)
-4. COOL     (Typicaly labeled Y)
-5. FAN      (Typicaly labeled G)
+1. 24VAC    (Typically labeled R)
+2. COMMON   (Typically labeled C)
+3. HEAT     (Typically labeled W)
+4. COOL     (Typically labeled Y)
+5. FAN      (Typically labeled G)
    
 These connections are labeled on the PCB.
 
