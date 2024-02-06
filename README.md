@@ -18,8 +18,30 @@ While that project was succesful, it had a couple of drawbacks I wanted to resol
 Each assembled board is pre-flashed with the firmware in this repository when shipped. You'll need to configure the WiFi and get it hooked into Home Assistant. Setup is simple!
 
 Once the board is powered up, head over to [Improv-Wifi](https://www.improv-wifi.com/). Using a PC or laptop that has BLE capability.
+
 Click on "Connect Device to WiFi"
 ![alt text](https://i.imgur.com/Wjgqj0u.png)
+
+Select hvac-monitor from the list.
+![alt text](https://i.imgur.com/UT5waBG.png)
+
+After a moment, the system will prompt you for a network SSID and password. The ESP will provision and should eventually connect to your network.
+![alt text](https://i.imgur.com/MuuLvju.png)
+
+If all goes well, you should see the following
+![alt text](https://i.imgur.com/4TMDPDZ.png)
+
+Head back over to your ESPHome instance,and you should see that the device has been discovered, and is ready to adopt.
+![alt text](https://i.imgur.com/GCHEvlh.png)
+
+Click adopt, and enter a name of your choosing for the device.
+![alt text](https://i.imgur.com/Dh5V0go.png)
+
+You will be prompted for the API encryption key, click install to download the most recent yaml configuration and install it to the board.
+![alt text](https://i.imgur.com/EqdbTR6.png)
+
+Once the upload is complete, head over to HomeAssistant (Settings -> Devices & Services) and you should see the device waiting to be added. :)
+![alt text](https://i.imgur.com/AinF8mz.png)
 
 ## System Architecture
 ### Power
