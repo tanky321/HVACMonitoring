@@ -32,6 +32,7 @@ After a moment, the system will prompt you for a network SSID and password. The 
 ![alt text](https://i.imgur.com/MuuLvju.png)
 
 If all goes well, you should see the following
+
 ![alt text](https://i.imgur.com/4TMDPDZ.png)
 
 Head back over to your ESPHome instance,and you should see that the device has been discovered, and is ready to adopt.
