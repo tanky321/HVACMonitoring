@@ -11,7 +11,8 @@ While that project was succesful, it had a couple of drawbacks I wanted to resol
 * Size. The old design was rather large, shrinking it down would be ideal.
 
 ## Setup
-### connections
+### Connections
+![alt text](https://i.imgur.com/OJXgdR1.png)
 
 
 ## System Architecture
