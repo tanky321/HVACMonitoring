@@ -10,6 +10,10 @@ While that project was succesful, it had a couple of drawbacks I wanted to resol
 * Adafruit Huzzah32 is a bit pricey. With the ability to have boards made by JLC, it made sense to go with an ESP32 Module
 * Size. The old design was rather large, shrinking it down would be ideal.
 
+## Setup
+### connections
+
+
 ## System Architecture
 ### Power
 System power is derived from the AC connections to the furnace. These connections are made via the 5 position TE header on the board.
