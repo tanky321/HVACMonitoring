@@ -22,33 +22,26 @@ esp32:
     type: arduino #esp-idf
     version: recommended
 
-
 # Enable logging
 logger:
 
 # Enable Home Assistant API
 api:
 
-
 #OTA Password
 ota:
 
-#Dashboard Import
+# Dashboard Import
 dashboard_import:
     package_import_url: github://tanky321/HVACMonitoring/HVACMonitoring.yaml@main
     import_full_config: false
     
 wifi:
-  # Set up a wifi access point
-  #ap:
-  #  password: "12345678"
-
 
 # Sets up Bluetooth LE (Only on ESP32) to allow the user
 # to provision wifi credentials to the device.
 esp32_improv:
   authorizer: none
-
 
 # In combination with the `ap` this allows the user
 # to provision wifi credentials to the device.
@@ -57,7 +50,6 @@ captive_portal:
 #Setup simple web server to see device parameters
 web_server:
   port: 80
-
     
 #Enable SPI on GPIO18 & 19. Note that MOSI isnt needed as the max6675 just clocks out data
 spi:
@@ -141,3 +133,8 @@ binary_sensor:
 status_led:
   pin:
     number: 3
+
+#Add restart functionality
+switch:
+  - platform: restart
+    name: ${disp_name} Restart  
