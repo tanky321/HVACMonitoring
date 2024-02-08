@@ -17,7 +17,7 @@ While that project was successful, it had a couple of drawbacks I wanted to reso
 ### ESPHome
 Each assembled board is pre-flashed with the firmware in this repository when shipped. You'll need to configure the WiFi and get it hooked into Home Assistant. Setup is simple!
 
-Once the board is powered up, head over to [Improv-Wifi](https://www.improv-wifi.com/). Using a device that has BLE capability.
+Once the board is powered up, head over to [Improv-Wifi](https://www.improv-wifi.com/), using a device that has BLE capability.
 
 Click on "Connect Device to WiFi"
 
