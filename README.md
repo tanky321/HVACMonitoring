@@ -8,7 +8,7 @@ While that project was successful, it had a couple of drawbacks I wanted to reso
 * Power derived from furnace. The original design was powered through the regulator on the Adafruit Huzzah32 via an external USB connection.
 * The H20 detection circuit was not functional in its existing state.
 * Adafruit Huzzah32 is a bit pricey. With the ability to have boards made by JLC, it made sense to go with an ESP32 Module
-* Size. The old design was rather large, shrinking it down would be ideal.
+* Size. The old design was rather large, shrinking it down would be ideal
 
 ## Setup
 ### Connections
