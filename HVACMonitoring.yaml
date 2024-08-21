@@ -30,6 +30,7 @@ api:
 
 #OTA Password
 ota:
+  - platform: esphome
 
 # Dashboard Import
 dashboard_import:
