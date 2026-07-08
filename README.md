@@ -24,27 +24,27 @@ Password is "**pressure**"
 A prompt should appear to sign into the network (on Android at least, not tested on iOS). Follow that prompt. If a prompt does not appear, navigate to [http://192.168.4.1/](http://192.168.4.1/)
 
 A screen simillar to this one will appear. Either select your SSID, or enter it manually in the box at the bottom. Enter the appropriate password and click save
-![alt_text](https://imgur.com/a/CaTqnIJ)
+![alt_text](https://i.imgur.com/Kv9ugGL.png)
 
 You can now navigate to [hvac-monitor.local](hvac-monitor.local) (or the assigned IP if mDNS doesn't work) to open the web interface. This will display all of the sensor readings as shown below.
-![alt_text](https://imgur.com/a/ic3Zcpt)
+![alt_text](https://i.imgur.com/fGyhH5C.png)
 
 Navigate back to your Home Assistant instance and then to your ESPHome instance. ESPHome will prompt that it discovered a device, click **show** and then click **Take control**
-![alt_text](https://imgur.com/a/QDjvXaD)
+![alt_text](https://i.imgur.com/qlA69nn.png)
 
 On the next window, you can modify the friendly name if needed. Once finished, click **Take control**
-![alt_text](https://imgur.com/a/5xGE77W)
+![alt_text](https://i.imgur.com/EzSLltm.png)
 
 In Home Assistant go to **Settings -> Devices & services**, you should see a prompt to add the monitoring system as shown below. Click **Add**
-![alt_text](https://imgur.com/a/FTTmCv1)
+![alt_text](https://i.imgur.com/ZqSnpKg.png)
 
 Click **submit** on the following window
-![alt_text](https://imgur.com/a/SiqtjkW)
+![alt_text](https://i.imgur.com/lrty0q9.png)
 
 The **Name and assign** window will be presented, modify the Device name if required. When finished click **Skip and finish**
 
 You will now be presented with all of the device info, and the device has been succesfully added to Home Assistant
-![alt_text](https://imgur.com/a/aJRwKA4)
+![alt_text](https://i.imgur.com/pV59pPa.png)
 
 
 ## System Architecture
