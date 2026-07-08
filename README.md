@@ -17,39 +17,35 @@ While that project was successful, it had a couple of drawbacks I wanted to reso
 ### ESPHome
 Each assembled board is pre-flashed with the firmware in this repository when shipped. You'll need to configure the WiFi and get it hooked into Home Assistant. Setup is simple!
 
-Once the board is powered up, head over to [Improv-Wifi](https://www.improv-wifi.com/), using a device that has BLE capability.
+Once the board is powered, allow a few minutes for the fallback hotspot to be created by the device. This will take about 1 minute. 
+Connect to the SSID: "HVAC Monitor Fallback Hotspot"
+Password is "**pressure**"
 
-Click on "Connect Device to WiFi"
+A prompt should appear to sign into the network (on Android at least, not tested on iOS). Follow that prompt. If a prompt does not appear, navigate to [http://192.168.4.1/](http://192.168.4.1/)
 
-![alt text](https://i.imgur.com/Wjgqj0u.png)
+A screen simillar to this one will appear. Either select your SSID, or enter it manually in the box at the bottom. Enter the appropriate password and click save
+![alt_text](https://imgur.com/a/CaTqnIJ)
 
-Select hvac-monitor from the list.
+You can now navigate to [hvac-monitor.local](hvac-monitor.local) (or the assigned IP if mDNS doesn't work) to open the web interface. This will display all of the sensor readings as shown below.
+![alt_text](https://imgur.com/a/ic3Zcpt)
 
-![alt text](https://i.imgur.com/UT5waBG.png)
+Navigate back to your Home Assistant instance and then to your ESPHome instance. ESPHome will prompt that it discovered a device, click **show** and then click **Take control**
+![alt_text](https://imgur.com/a/QDjvXaD)
 
-After a moment, the system will prompt you for a network SSID and password. The ESP will provision and should eventually connect to your network.
+On the next window, you can modify the friendly name if needed. Once finished, click **Take control**
+![alt_text](https://imgur.com/a/5xGE77W)
 
-![alt text](https://i.imgur.com/MuuLvju.png)
+In Home Assistant go to **Settings -> Devices & services**, you should see a prompt to add the monitoring system as shown below. Click **Add**
+![alt_text](https://imgur.com/a/FTTmCv1)
 
-If all goes well, you should see the following
+Click **submit** on the following window
+![alt_text](https://imgur.com/a/SiqtjkW)
 
-![alt text](https://i.imgur.com/4TMDPDZ.png)
+The **Name and assign** window will be presented, modify the Device name if required. When finished click **Skip and finish**
 
-Head back over to your ESPHome instance,and you should see that the device has been discovered, and is ready to adopt.
+You will now be presented with all of the device info, and the device has been succesfully added to Home Assistant
+![alt_text](https://imgur.com/a/aJRwKA4)
 
-![alt text](https://i.imgur.com/GCHEvlh.png)
-
-Click adopt, and enter a name of your choosing for the device.
-
-![alt text](https://i.imgur.com/Dh5V0go.png)
-
-You will be prompted for the API encryption key, click install to download the most recent yaml configuration and install it to the board.
-
-![alt text](https://i.imgur.com/EqdbTR6.png)
-
-Once the upload is complete, head over to HomeAssistant (Settings -> Devices & Services) and you should see the device waiting to be added. :)
-
-![alt text](https://i.imgur.com/AinF8mz.png)
 
 ## System Architecture
 ### Power
