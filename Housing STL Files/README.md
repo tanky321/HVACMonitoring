@@ -1,4 +1,4 @@
-#Enclosure Notes
+# Enclosure Notes
 ![alt_text](https://i.imgur.com/ohDpFmq.png)
 
 The enclosure is designed to be 3D printed. It is not designed to be water tight by any means (there are gigantic holes in it for wires and tubing...)
