@@ -13,7 +13,7 @@ While that project was successful, it had a couple of drawbacks I wanted to reso
 ## Setup
 ### Connections
 ### NOTE! THE BOARD MUST BE POWERED THROUGH THE 24VAC AND COM CONNECTIONS, THE BOARD WILL NOT POWER UP ON USB
-* *To be corrected in future revisions* *
+*To be corrected in future revisions*
 
 ![alt text](https://i.imgur.com/OJXgdR1.png)
 
